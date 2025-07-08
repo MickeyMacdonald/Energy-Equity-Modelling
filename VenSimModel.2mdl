@@ -1,0 +1,203 @@
+{UTF-8}
+********************************************************
+	.
+********************************************************~
+		<?xml version="1.0" encoding="UTF-8"?>
+		<richtext version="1.0.0.0" xmlns="http://www.wxwidgets.org">
+		  <paragraphlayout textcolor="#000000" fontpointsize="9" fontfamily="70" \
+		fontstyle="90" fontweight="400" fontunderlined="0" fontface="Segoe UI" \
+		alignment="1" parspacingafter="10" parspacingbefore="0" linespacing="10" \
+		margin-left="5,4098" margin-right="5,4098" margin-top="5,4098" \
+		margin-bottom="5,4098">
+		    <paragraph>
+		      <text>An introductory exploration of energy policy impacts on an theoretical \
+		indigenous households tendency towards energy poverty in Calgary, Alberta, \
+		Canada.</text>
+		    </paragraph>
+		    <paragraph>
+		      <text></text>
+		    </paragraph>
+		    <paragraph>
+		      <text>Mickey Macdonald July 2025</text>
+		    </paragraph>
+		  </paragraphlayout>
+		</richtext>
+		
+	|
+
+Advocacy Growth Rate  = A FUNCTION OF( Trust Building Initiative)
+	~	
+	~		|
+
+Community Advocacy Capacity=A FUNCTION OF(Community Advocacy Capacity,Advocacy Growth Rate\
+		) ~~|
+Community Advocacy Capacity=
+	~	
+	~		|
+
+Efficiency Upgrade Rate=A FUNCTION OF(Efficiency Upgrade Rate,Trust In Institutions) ~~|
+Efficiency Upgrade Rate=
+	~	{%}
+	~		|
+
+Energy Cost Accumulation  = A FUNCTION OF( Energy Price,Seasonal Weather Severity)
+	~	
+	~		|
+
+Energy Price  = A FUNCTION OF( Efficiency Upgrade Rate) ~~|
+Energy Price=
+	~	$/kWh
+	~	Rates to be taken from averages across past 5 years, increasing based on \
+		inflation rate
+	|
+
+Health Recovery Rate  = A FUNCTION OF( )
+	~	
+	~		|
+
+Household Energy Burden=A FUNCTION OF(Household Energy Burden,Energy Cost Accumulation\
+		) ~~|
+Household Energy Burden=
+	~	{%}
+	~		|
+
+Household Expense=A FUNCTION OF(Household Expense,Household Size) ~~|
+Household Expense=
+	~	$
+	~		|
+
+Household Income=A FUNCTION OF(Household Income,Household Size) ~~|
+Household Income=
+	~	$
+	~		|
+
+Household Size=A FUNCTION OF(Household Size) ~~|
+Household Size=
+	~	Persons [1,6,1]
+	~		|
+
+Housing Condition Index=A FUNCTION OF(Housing Condition Index,Efficiency Upgrade Rate\
+		) ~~|
+Housing Condition Index= INTEG (
+	,
+		1)
+	~	INDEX [0,4]
+	~		|
+
+Power Used=A FUNCTION OF(Power Used,Efficiency Upgrade Rate,Household Size) ~~|
+Power Used=
+	~	kWh
+	~		|
+
+Seasonal Weather Severity=A FUNCTION OF(Seasonal Weather Severity,Power Used) ~~|
+Seasonal Weather Severity=
+	~	INDEX
+	~		|
+
+Trust Building Initiative  = A FUNCTION OF( )
+	~	
+	~		|
+
+Trust In Institutions  = A FUNCTION OF( Community Advocacy Capacity,Energy Cost Accumulation\
+		,Trust Building Initiative)
+	~	
+	~		|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 120
+	~	Month
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Month
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP 
+	~	Month [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 0.25
+	~	Month [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*View 1
+$-1--1--1,0,|12||-1--1--1|-1--1--1|-1--1--1|-1--1--1|-1--1--1|96,96,100,2
+10,1,Power Used,649,640,60,25,8,3,0,0,-1,1,0,0,0,0,0,0,0,0
+10,2,Household Energy Burden,1612,801,144,36,8,3,0,0,-1,1,0,0,0,0,0,0,0,0
+10,3,Housing Condition Index,233,506,79,37,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,4,Community Advocacy Capacity,1635,376,105,25,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,5,Trust In Institutions,1305,320,60,37,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,6,Energy Cost Accumulation,1341,622,67,37,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,7,Efficiency Upgrade Rate,612,393,67,37,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,8,Health Recovery Rate,1734,497,70,37,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,9,Trust Building Initiative,1310,146,70,37,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,10,Advocacy Growth Rate,1704,161,62,37,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,11,Energy Price,1046,474,62,25,8,3,0,0,-1,1,0,0,0,0,0,0,0,0
+12,12,0,452,90,80,65,0,79,0,0,0,0,0,0,0,0,0,0,0,0
+Energy Price,0,1.00,0.01
+1,13,11,6,1,0,0,0,0,192,0,-1--1--1,,1|(1211,530)|
+1,14,6,2,1,0,0,0,0,192,0,-1--1--1,,1|(1438,714)|
+10,15,Household Size,236,710,72,25,8,3,0,0,-1,1,0,0,0,0,0,0,0,0
+1,16,7,1,1,0,0,0,0,0,0,-1--1--1,,1|(664,519)|
+1,17,15,1,0,0,0,0,0,0,0,-1--1--1,,1|(0,0)|
+1,18,6,5,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,19,9,5,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,20,5,7,1,0,0,0,0,192,0,-1--1--1,,1|(767,280)|
+1,21,7,11,1,0,0,0,0,64,0,-1--1--1,,1|(864,408)|
+1,22,7,3,1,0,0,0,0,192,0,-1--1--1,,1|(372,342)|
+12,23,0,640,90,80,65,0,79,0,0,0,0,0,0,0,0,0,0,0,0
+Household Size,0,0,0
+1,24,4,5,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+1,25,9,10,1,0,0,0,0,192,0,-1--1--1,,1|(1491,76)|
+1,26,10,4,1,0,0,0,0,192,0,-1--1--1,,1|(1788,289)|
+10,27,Household Income,495,952,60,37,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,28,Household Expense,503,848,64,37,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,29,15,28,1,0,0,0,0,192,0,-1--1--1,,1|(339,796)|
+1,30,15,27,1,0,0,0,0,192,0,-1--1--1,,1|(282,865)|
+10,31,Seasonal Weather Severity,939,704,102,25,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,32,1,31,1,0,0,0,0,192,0,-1--1--1,,1|(769,679)|
+1,33,31,6,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+///---\\\
+:L<%^E!@
+5:Seasonal Weather Severity
+19:100,0
+24:0
+25:0
+26:0
+23:0
+15:0,0,0,1,0,0
+27:1,
+34:96,
+42:0
+72:0
+73:0
+95:0
+96:0
+97:0
+77:0
+78:0
+102:1
+93:0
+94:0
+92:0
+91:0
+90:0
+87:0
+75:
+43:
+103:8,8,8,3,8
+105:0,0,0,0,0,0,0,0,0,0
+104:Verdana|12||0-0-0|0-0-0|-1--1--1|0-0-255|192-192-192|-1--1--1
+121:1

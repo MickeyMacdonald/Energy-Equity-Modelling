@@ -1,0 +1,259 @@
+{UTF-8}
+Advocacy Capacity  = A FUNCTION OF( Advocacy Growth)
+	~	
+	~		|
+
+Advocacy Growth  = A FUNCTION OF( Proportion of Net Energy Poor Households,Seasonal Weather Severity Multipler\
+		,Trust in Municipal Institution)
+	~	
+	~		|
+
+Building Type  = A FUNCTION OF( )
+	~	
+	~		|
+
+Electrcitity Energy Contributions  = A FUNCTION OF( Building Type)
+	~	
+	~		|
+
+Energy Costs  = A FUNCTION OF( Energy Price,Energy Used)
+	~	
+	~		|
+
+Energy Efficiency Upgrade Installation Rate=A FUNCTION OF(Energy Efficiency Upgrade Installation Rate\
+		,Trust in Municipal Institution) ~~|
+Energy Efficiency Upgrade Installation Rate=
+	~	
+	~		|
+
+Energy Price  = A FUNCTION OF( "Probability of Non-payment")
+	~	
+	~		|
+
+Energy Used  = A FUNCTION OF( House Efficiency Index,Household Size,Seasonal Weather Severity Multipler\
+		)
+	~	
+	~		|
+
+Global Warming Impacts([(-12.3848,-16.2347)-(21.3237,38.7174)],(0.02213,0.069804), (2.16714\
+		,0.350881), (4.9028,0.807631), (8.16695,1.27609), (10.4052,1.81482), (11.8366,4.2406\
+		), (12.2432,6.83666), (12.5312,8.90389), (13.9901,12.9757), (15.92,14.2537))
+	~	
+	~		|
+
+Heating Efficiencies  = A FUNCTION OF( Building Type) ~~|
+Heating Efficiencies([(0.084618,0.093641)-(0.084877,0.093818)],(0.085878,0.086379), (\
+		0.230916,0.169435), (0.520992,0.275748
+), (0.711832,0.428571), (0.780534,0.681063), (0.938931,0.554817), (0.950382,0.328904)\
+		, (0.98855,0.156146))
+	~	{%}
+	~		|
+
+House Efficiency Index  = A FUNCTION OF( Electrcitity Energy Contributions,Energy Efficiency Upgrade Installation Rate\
+		,Heating Efficiencies)
+	~	
+	~		|
+
+Household Demographic Multiplier  = A FUNCTION OF( )
+	~	
+	~		|
+
+Household Energy Burden  = A FUNCTION OF( Energy Costs,Income) ~~|
+Household Energy Burden= INTEG (IF THEN ELSE ( {Household} , {ontrue} , {onfalse} ) ,
+		)
+	~	
+	~		|
+
+Household Size  = A FUNCTION OF( Household Demographic Multiplier) ~~|
+Household Size=1
+	~	People [1,6,1]
+	~		|
+
+Income  = A FUNCTION OF( Household Size)
+	~	
+	~		|
+
+Net Energy Poor Households  = A FUNCTION OF( Household Energy Burden)
+	~	
+	~		|
+
+Net Energy Satisfied Households  = A FUNCTION OF( Household Energy Burden)
+	~	
+	~		|
+
+Net Households  = A FUNCTION OF( )
+	~	
+	~		|
+
+"Probability of Non-payment"  = A FUNCTION OF( Household Energy Burden,Income)
+	~	
+	~		|
+
+Proportion of Net Energy Poor Households  = A FUNCTION OF( Net Energy Poor Households\
+		,Net Households)
+	~	
+	~		|
+
+Proportion of Net Energy Satisfied Households  = A FUNCTION OF( Net Energy Satisfied Households\
+		,Net Households)
+	~	
+	~		|
+
+Seasonal Weather Severity Multipler  = A FUNCTION OF( Global Warming Impacts)
+	~	
+	~		|
+
+Trust Building Initiative  = A FUNCTION OF( Energy Efficiency Upgrade Installation Rate\
+		)
+	~	
+	~		|
+
+Trust in Municipal Institution  = A FUNCTION OF( Advocacy Capacity,Trust Building Initiative\
+		)
+	~	
+	~		|
+
+********************************************************
+	.HouseholdControls
+********************************************************~
+	|
+
+********************************************************
+	.Control
+********************************************************~
+		Simulation Control Parameters
+	|
+
+FINAL TIME  = 120
+	~	Month
+	~	The final time for the simulation.
+	|
+
+INITIAL TIME  = 0
+	~	Month
+	~	The initial time for the simulation.
+	|
+
+SAVEPER  = 
+        TIME STEP
+	~	Month [0,?]
+	~	The frequency with which output is stored.
+	|
+
+TIME STEP  = 1
+	~	Month [0,?]
+	~	The time step for the simulation.
+	|
+
+\\\---/// Sketch information - do not modify anything except names
+V300  Do not put anything below this section - it will be ignored
+*Default View
+$-1--1--1,0,|12||-1--1--1|-1--1--1|-1--1--1|-1--1--1|-1--1--1|96,96,68,2
+10,1,Household Energy Burden,1172,476,59,32,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+11,2,0,1477,210,8,6,1,3,0,0,1,0,0,0,0,0,0,0,0,0
+12,3,0,57,315,66,44,8,79,0,0,0,0,0,0,0,0,0,0,0,0
+Household Size,0,0,0
+10,4,Household Size,541,331,60,26,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+12,5,0,57,201,62,44,8,79,0,0,0,0,0,0,0,0,0,0,0,0
+FINAL TIME,0,0,0
+12,6,0,219,201,73,44,8,79,0,0,0,0,0,0,0,0,0,0,0,0
+TIME STEP,0,0,0
+10,7,Net Energy Poor Households,1428,321,52,32,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,8,Energy Price,794,604,65,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,9,"Probability of Non-payment",1002,599,54,32,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,10,1,9,1,0,0,0,0,192,0,-1--1--1,,1|(1151,564)|
+10,11,Energy Used,510,732,66,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,12,Energy Efficiency Upgrade Installation Rate,1237,918,77,32,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,13,Energy Costs,623,480,54,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,14,8,13,1,0,0,0,0,192,0,-1--1--1,,1|(685,582)|
+10,15,Trust Building Initiative,1186,1177,55,32,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,16,Advocacy Growth,1692,1144,48,32,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,17,Advocacy Capacity,1526,1296,52,32,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,18,Trust in Municipal Institution,1384,1098,67,32,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,19,16,17,1,0,0,0,0,192,0,-1--1--1,,1|(1664,1240)|
+1,20,17,18,1,0,0,0,0,192,0,-1--1--1,,1|(1418,1242)|
+1,21,18,16,1,0,0,0,0,192,0,-1--1--1,,1|(1557,1010)|
+1,22,15,18,1,0,0,0,0,192,0,-1--1--1,,1|(1297,1177)|
+1,23,18,12,1,0,0,0,0,192,0,-1--1--1,,1|(1375,994)|
+10,24,Seasonal Weather Severity Multipler,1411,826,70,32,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,25,11,13,1,0,0,0,0,192,0,-1--1--1,,1|(479,578)|
+1,26,24,11,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,27,Net Energy Satisfied Households,1213,321,51,34,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+11,28,0,1165,225,8,6,1,3,0,0,1,0,0,0,0,0,0,0,0,0
+10,29,Net Households,1321,165,62,26,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,30,Proportion of Net Energy Poor Households,1545,160,67,40,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,31,29,30,1,0,0,0,0,192,0,-1--1--1,,1|(1440,197)|
+1,32,7,30,1,0,0,0,0,192,0,-1--1--1,,1|(1511,268)|
+11,33,0,1298,283,8,6,1,3,0,0,1,0,0,0,0,0,0,0,0,0
+1,34,33,27,100,0,0,22,0,192,0,-1--1--1,,1|(1298,321)|
+1,35,33,29,4,0,0,22,0,192,0,-1--1--1,,1|(1298,234)|
+11,36,0,1341,283,8,6,1,3,0,0,1,0,0,0,0,0,0,0,0,0
+1,37,36,7,100,0,0,22,0,192,0,-1--1--1,,1|(1341,321)|
+1,38,36,29,4,0,0,22,0,192,0,-1--1--1,,1|(1341,234)|
+10,39,Proportion of Net Energy Satisfied Households,1089,148,67,40,3,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,40,29,39,1,0,0,0,0,192,0,-1--1--1,,1|(1206,206)|
+1,41,27,39,1,0,0,0,0,192,0,-1--1--1,,1|(1119,255)|
+1,42,1,27,1,0,0,0,0,192,0,-1--1--1,,1|(1212,409)|
+1,43,1,7,1,0,0,0,0,192,0,-1--1--1,,1|(1348,400)|
+1,44,30,16,1,0,0,0,0,192,0,-1--1--1,,1|(1811,585)|
+1,45,24,16,1,0,0,0,0,192,0,-1--1--1,,1|(1655,979)|
+12,46,48,1648,825,25,15,0,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,47,49,46,100,0,0,22,0,192,0,-1--1--1,,1|(1593,825)|
+1,48,49,24,4,0,0,22,0,192,0,-1--1--1,,1|(1514,825)|
+11,49,0,1555,825,8,6,33,3,0,0,3,0,0,0,0,0,0,0,0,0
+10,50,Global Warming Impacts,1555,785,62,32,40,3,0,0,-1,1,0,0,0,0,0,0,0,0
+10,51,Household Demographic Multiplier,453,193,53,40,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,52,51,4,1,0,0,0,0,192,0,-1--1--1,,1|(466,269)|
+1,53,12,15,1,0,0,0,0,192,0,-1--1--1,,1|(1084,1039)|
+10,54,House Efficiency Index,696,887,63,32,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,55,12,54,1,0,0,0,0,192,0,-1--1--1,,1|(1038,874)|
+1,56,54,11,1,0,0,0,0,192,0,-1--1--1,,1|(522,924)|
+1,57,9,8,0,0,0,0,0,192,0,-1--1--1,,1|(0,0)|
+10,58,Heating Efficiencies,519,1034,66,32,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+10,59,Electrcitity Energy Contributions,523,1136,70,32,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,60,58,54,1,0,0,0,0,192,0,-1--1--1,,1|(618,1011)|
+1,61,59,54,1,0,0,0,0,192,0,-1--1--1,,1|(641,1070)|
+12,62,32,1232,1053,58,58,2,3,0,0,-1,1,0,0,0,0,0,0,0,0
+12,63,28,1533,1148,58,58,2,3,0,0,-1,1,0,0,0,0,0,0,0,0
+12,64,50,1089,548,27,27,2,3,0,0,-1,1,0,0,0,0,0,0,0,0
+10,65,Building Type,333,941,53,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,66,65,58,1,0,0,0,0,192,0,-1--1--1,,1|(401,1004)|
+1,67,65,59,1,0,0,0,0,192,0,-1--1--1,,1|(380,1086)|
+12,68,0,263,1089,80,80,6,7,0,0,-1,1,0,0,0,0,0,0,0,0
+These are lookup tables for relative values
+10,69,Income,951,300,48,26,8,3,0,0,-1,0,0,0,0,0,0,0,0,0
+1,70,4,69,1,0,0,0,0,192,0,-1--1--1,,1|(832,252)|
+1,71,69,1,1,0,0,0,0,192,0,-1--1--1,,1|(1029,405)|
+1,72,13,1,1,0,0,0,0,192,0,-1--1--1,,1|(886,498)|
+12,73,0,831,421,53,53,6,7,0,0,-1,1,0,0,0,0,0,0,0,0
+Lower the income higher prob of NP.
+1,74,69,73,1,0,0,0,0,192,0,-1--1--1,,1|(867,326)|
+1,75,73,9,1,0,0,0,0,192,0,-1--1--1,,1|(849,487)|
+1,76,4,11,1,0,0,0,0,192,0,-1--1--1,,1|(429,592)|
+///---\\\
+:L<%^E!@
+23:0
+15:0,0,0,1,0,0
+27:0,
+34:96,
+42:0
+72:0
+73:0
+95:1
+96:0
+97:0
+77:0
+78:0
+102:0
+93:0
+94:0
+92:0
+91:0
+90:0
+87:0
+75:
+43:
+103:8,8,8,3,8
+105:0,0,0,0,0,0,0,0,0,0
+104:Verdana|12||0-0-0|0-0-0|-1--1--1|0-0-255|192-192-192|-1--1--1
+121:1
